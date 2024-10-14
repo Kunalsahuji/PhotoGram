@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 interface ICreatePostProps {
 }
 
-const CreatePost: React.FunctionComponent<ICreatePostProps> = (props) => {
+const CreatePost: React.FunctionComponent<ICreatePostProps> = () => {
   const navigate = useNavigate()
   const { user } = useUserAuth()
   const [fileEntry, setFileEntry] = React.useState<FileEntry>({
