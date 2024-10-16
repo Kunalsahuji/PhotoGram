@@ -20,18 +20,17 @@ export interface Post {
     userId: string | null;
     date: Date;
 }
-export interface PhotoMeta{
-    cdnUrl : string;
+export interface PhotoMeta {
+    cdnUrl: string;
     uuid: string;
 }
 
 export interface DocumentResponse {
-    id: string;
-    caption: string;
-    photos: PhotoMeta[];
-    likes: number;
-    userlikes: [];
-    userId: string | null;
-    date: Date;
-  }
-  
+    id?: string;
+    caption?: string;
+    photos?: PhotoMeta[];
+    likes?: number;
+    userlikes?: [];
+    userId?: string;
+    date?: Date;
+}
