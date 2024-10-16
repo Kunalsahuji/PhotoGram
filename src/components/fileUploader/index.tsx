@@ -6,6 +6,7 @@ import { FileEntry } from '@/types';
 interface IFileUploaderProps {
   fileEntry: FileEntry;
   onChange: (fileEntry: FileEntry) => void;
+  preview: boolean,
   // theme: 'light' | 'dark';
 
 }
@@ -30,7 +31,7 @@ const localeDefinitionOverride = {
     "photo__other": 'photos',
   }
 }
-const FileUploader: React.FunctionComponent<IFileUploaderProps> = ({ fileEntry, onChange }) => {
+const FileUploader: React.FunctionComponent<IFileUploaderProps> = ({ fileEntry, onChange, preview }) => {
 
   const [uploadedFiles, setUploadedFiles] = useState<OutputFileEntry<'success'>[]>([]);
 
@@ -57,7 +58,7 @@ const FileUploader: React.FunctionComponent<IFileUploaderProps> = ({ fileEntry, 
     <div>
       <FileUploaderRegular
         imgOnly
-        multiple
+        multiple={preview}
         removeCopyright
         confirmUpload={false}
         localeDefinitionOverride={localeDefinitionOverride}
@@ -68,7 +69,7 @@ const FileUploader: React.FunctionComponent<IFileUploaderProps> = ({ fileEntry, 
       // className={cs(uploaderClassName)}
       // classNameUploader={cs(cssOverrides.fileUploader, { [st.darkModeEnabled]: theme === 'dark' })}
       />
-      <div className="grid grid-cols-2 gap-4 mt-8">
+      {preview ? <div className="grid grid-cols-2 gap-4 mt-8">
         {fileEntry.files.map((file) => (
           <div key={file.uuid} className="relative">
             <img
@@ -88,7 +89,8 @@ const FileUploader: React.FunctionComponent<IFileUploaderProps> = ({ fileEntry, 
             </div>
           </div>
         ))}
-      </div>
+      </div> : <></>}
+
     </div>
   );
 };
