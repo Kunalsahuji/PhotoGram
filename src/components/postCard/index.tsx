@@ -2,7 +2,7 @@ import { useUserAuth } from '@/context/userAuthContext';
 import { DocumentResponse } from '@/types';
 import * as React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card';
-import image2 from "@/assets/images/image2.jpg"
+import avatar from "@/assets/images/avtar.webp"
 import { HeartIcon, MessageCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { updateLikesOnPost } from '@/repository/post.service';
@@ -43,13 +43,13 @@ const PostCard: React.FunctionComponent<IPostCardProps> = ({ data }) => {
             <CardHeader className='flex flex-col p-3'>
                 <CardTitle className='text-sm text-center flex justify-start items-center'>
                     <span className='mr-2 '>
-                        <img src={image2} alt="img feed" className='w-10 h-10 rounded-full border-2 border-slate-800 object-cover' />
+                        <img src={data.photoURL ? data.photoURL : avatar} alt="img feed" className='w-10 h-10 rounded-full border-2 border-slate-800 object-cover' />
                     </span>
-                    <span>Guest_user</span>
+                    <span>{data.username ? data.username : "Guest_user"}</span>
                 </CardTitle>
             </CardHeader>
             <CardContent className='p-0 '>
-                <img src={data.photos ? data.photos[0].cdnUrl : ""} alt="cardContentImage" />
+                <img src={data.photos ? data.photos[0].cdnUrl : avatar} alt="cardContentImage" />
             </CardContent>
             <CardFooter className='flex flex-col p-3'>
                 <div className='flex justify-between w-full mb-3'>
@@ -62,7 +62,7 @@ const PostCard: React.FunctionComponent<IPostCardProps> = ({ data }) => {
                 </div>
                 <div className='w-full text-sm'>{likesInfo.likes} likes</div>
                 <div className='w-full text-sm'>
-                    <span>Guest_user</span>:{data.caption}
+                    <span>{data.username ? data.username : "Guest_user"}</span> : {data.caption ? data.caption : "This is caption"}
                 </div>
             </CardFooter>
         </Card>

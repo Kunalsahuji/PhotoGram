@@ -52,3 +52,4 @@ export const updateUserProfile = async (id: string, user: UserProfile) => {
     ...user,
   });
 };
+
