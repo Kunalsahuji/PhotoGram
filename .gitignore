@@ -14,8 +14,12 @@ dist-ssr
 *.local
 package-lock.json
 .env
-
-
+dataconnect
+dataconnect-generated
+firebase.json
+firestore.indexes.json
+firestore.rules
+.firebase
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
