@@ -53,3 +53,24 @@ export const updateUserProfile = async (id: string, user: UserProfile) => {
   });
 };
 
+export const getAllUsers = async (userId: string) => {
+  try {
+    const querySnapshot = await getDocs(collection(db, COLLECTION_NAME))
+    const tempArr: ProfileResponse[] = [];
+    if (querySnapshot.size > 0) {
+      querySnapshot.forEach((doc) => {
+        const data = doc.data() as UserProfile;
+        const responseObj: ProfileResponse = {
+          id: doc.id,
+          ...data,
+        }
+        tempArr.push(responseObj)
+      })
+      return tempArr.filter((item) => item.userId != userId)
+    } else {
+      console.log("No such documents/user profile to fetch!")
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}

@@ -35,7 +35,7 @@ const Signup: React.FunctionComponent<ISignupProps> = () => {
     e.preventDefault();
     try {
       await googleSignIn();
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       console.log("Error : ", error);
     }
