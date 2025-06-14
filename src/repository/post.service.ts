@@ -12,6 +12,7 @@ import {
     updateDoc,
     where,
 } from "firebase/firestore";
+import { Heading1 } from "lucide-react";
 
 const COLLECTION_NAME = "posts";
 

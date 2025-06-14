@@ -44,7 +44,7 @@ const Login: React.FunctionComponent<ILoginProps> = () => {
   const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      console.log("The user login info is : ", userLogInInfo);
+      // console.log("The user login info is : ", userLogInInfo);
       await logIn(userLogInInfo.email, userLogInInfo.password);
       navigate("/");
     } catch (error) {

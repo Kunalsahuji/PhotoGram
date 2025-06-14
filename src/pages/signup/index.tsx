@@ -43,7 +43,7 @@ const Signup: React.FunctionComponent<ISignupProps> = () => {
   const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      console.log("The user info is : ", userInfo);
+      // console.log("The user info is : ", userInfo);
       await signUp(userInfo.email, userInfo.password);
       navigate("/");
     } catch (error) {

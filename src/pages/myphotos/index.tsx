@@ -22,7 +22,7 @@ const MyPhotos: React.FunctionComponent<IMyPhotosProps> = () => {
             id: doc.id,
             ...data,
           };
-          console.log("The response object is : ", responseObj);
+          // console.log("The response object is : ", responseObj);
           tempArr.push(responseObj);
         });
         setData(tempArr);

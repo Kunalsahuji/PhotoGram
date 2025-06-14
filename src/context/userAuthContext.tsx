@@ -43,7 +43,7 @@ import {
   };
   
   const updateProfileInfo = (profileInfo: ProfileInfo) => {
-    console.log("The user profileInfo is : ", profileInfo);
+    // console.log("The user profileInfo is : ", profileInfo);
     return updateProfile(profileInfo.user!, {
       displayName: profileInfo.displayName,
       photoURL: profileInfo.photoURL,
@@ -66,9 +66,9 @@ import {
   
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
-        console.log("I am in useEffect and user is : ", user);
+        // console.log("I am in useEffect and user is : ", user);
         if (user) {
-          console.log("The logged in user state is : ", user);
+          // console.log("The logged in user state is : ", user);
           setUser(user);
         }
   

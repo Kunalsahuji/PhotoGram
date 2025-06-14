@@ -1,4 +1,4 @@
-import { OutputFileEntry } from "@uploadcare/blocks";
+import { OutputFileEntry } from '@uploadcare/file-uploader';;
 import { User } from "firebase/auth";
 
 export interface UserLogIn {

@@ -24,7 +24,7 @@ const EditProfile: React.FunctionComponent<IEditProfileProps> = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { id, userId, userBio, displayName, photoURL } = location.state;
-  console.log("The location state is : ", location.state);
+  // console.log("The location state is : ", location.state);
   const [data, setData] = React.useState<UserProfile>({
     userId,
     userBio,
@@ -40,10 +40,10 @@ const EditProfile: React.FunctionComponent<IEditProfileProps> = () => {
     try {
       if (id) {
         const response = await updateUserProfile(id, data);
-        console.log("The Updated user profile is : ", response);
+        // console.log("The Updated user profile is : ", response);
       } else {
         const response = await createUserProfile(data);
-        console.log("The created user profile is : ", response);
+        // console.log("The created user profile is : ", response);
       }
       const profileInfo: ProfileInfo = {
         user: user!,
@@ -60,7 +60,7 @@ const EditProfile: React.FunctionComponent<IEditProfileProps> = () => {
       console.log(err);
     }
   };
-  console.log("The fileEntry is : ", fileEntry);
+  // console.log("The fileEntry is : ", fileEntry);
 
   React.useEffect(() => {
     if (fileEntry.files.length > 0) {

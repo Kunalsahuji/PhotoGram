@@ -28,8 +28,8 @@ const CreatePost: React.FunctionComponent<ICreatePostProps> = () => {
 
   const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Uploaded File Entry : ", fileEntry.files);
-    console.log("The create post is : ", post);
+    // console.log("Uploaded File Entry : ", fileEntry.files);
+    // console.log("The create post is : ", post);
     const photoMeta: PhotoMeta[] = fileEntry.files.map((file) => {
       return { cdnUrl: file.cdnUrl!, uuid: file.uuid! };
     });
@@ -41,7 +41,7 @@ const CreatePost: React.FunctionComponent<ICreatePostProps> = () => {
         username: user.displayName!,
         photoURL: user.photoURL!,
       };
-      console.log("The final posy is  : ", newPost);
+      // console.log("The final post is  : ", newPost);
       await createPost(newPost);
       navigate("/");
     } else {

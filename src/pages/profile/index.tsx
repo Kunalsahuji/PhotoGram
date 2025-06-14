@@ -13,7 +13,7 @@ interface IProfileProps {}
 
 const Profile: React.FunctionComponent<IProfileProps> = () => {
   const { user } = useUserAuth();
-  console.log("The logged in user profile info is : ", user);
+  // console.log("The logged in user profile info is : ", user);
   const navigate = useNavigate();
   const initialUserInfo: ProfileResponse = {
     id: "",
@@ -36,7 +36,7 @@ const Profile: React.FunctionComponent<IProfileProps> = () => {
             id: doc.id,
             ...data,
           };
-          console.log("The response object is : ", responseObj);
+          // console.log("The response object is : ", responseObj);
           tempArr.push(responseObj);
         });
         setData(tempArr);

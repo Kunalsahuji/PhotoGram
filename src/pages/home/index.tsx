@@ -15,7 +15,7 @@ const Home: React.FunctionComponent<IHomeProps> = () => {
   const [data, setData] = React.useState<DocumentResponse[]>([]);
   const getAllPost = async () => {
     const response: DocumentResponse[] = (await getPosts()) || [];
-    console.log("All post are : ", response);
+    // console.log("All post are : ", response);
     setData(response);
   };
   React.useEffect(() => {
